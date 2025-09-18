@@ -9,7 +9,7 @@ import pandas as pd
 depo=[]
 
 email_name="uysalbugra134@gmail.com"
-uygulama_şifresi="*************"
+uygulama_şifresi="**********"
 ımap="imap.gmail.com"
 # ssl üzerinden güvenli bağlantı kurar  ve giriş yapar 
 mail=imaplib.IMAP4_SSL(ımap)
@@ -42,13 +42,17 @@ df=pd.DataFrame(depo)
 df.to_csv("C:\\Users\\buğra\\Desktop\\mi.csv")
 
 
-
-
-
+print(df.info())
+print(df.dtypes)
+print(df.shape)
 print(df.columns)
+print(df.index)
 print(df.head())
 print(df.tail())
 print(df.describe)
-print(df.shape)
+print(df.nunique())
+print(df.memory_usage())
+print(df.value_counts()) # tüm satırların tekrar sayılarını verir
+print(df.duplicated().sum()) # kaç tane  tekrar eden satır var
 print(df.isnull().sum())
 
